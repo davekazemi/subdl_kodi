@@ -102,7 +102,7 @@ class SubtitlesProvider:
     def search_subtitles(self, media_data: dict):
         metadata = self.parse_filename(media_data['query'])
         tmdbID = self.get_tmdb_id(metadata)
-        url = f"{API_URL}?api_key={self.api_key}&type={metadata['type']}&languages=VI&tmdb_id={tmdbID}"
+        url = f"{API_URL}?api_key={self.api_key}&type={metadata['type']}&languages=FA&tmdb_id={tmdbID}"
         if metadata['type'] == 'tv':
             url += f"&season_number={metadata['season_number']}&episode_number={metadata['episode_number']}"
         result = self.handle_request(url)
